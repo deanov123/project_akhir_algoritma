@@ -1,0 +1,29 @@
+DECLARE namaKandidat[3] = {"Andi", "Budi", "Citra"}
+DECLARE suara[3] = {0, 0, 0}
+INPUT jumlahPemilih
+
+FOR i = 1 TO jumlahPemilih:
+    REPEAT
+        TAMPILKAN menu kandidat
+        INPUT pilihan
+        IF pilihan >= 1 AND pilihan <= 3 THEN
+            suara[pilihan-1] = suara[pilihan-1] + 1
+            valid = true
+        ELSE
+            TAMPILKAN "Pilihan tidak valid, ulangi!"
+            valid = false
+        ENDIF
+    UNTIL valid == true
+ENDFOR
+
+TAMPILKAN hasil suara tiap kandidat
+total = suara[0] + suara[1] + suara[2]
+
+maxSuara = nilai terbesar dari suara
+cek berapa kandidat yang punya maxSuara
+
+IF hanya 1 kandidat punya maxSuara:
+    TAMPILKAN pemenang
+ELSE
+    TAMPILKAN "Hasil SERI" dan daftar kandidat seri
+ENDIF
